@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 int min =5;
                 if(progress<min)
                 {
-                   seekBar.setProgress(min);
+                   seekBar.setProgress(startingPosition);
                 }
                 else
                 {
