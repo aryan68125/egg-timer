@@ -50,7 +50,17 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                 mediaPlayer.stop(); //this will stop the music that is being played by the alarm when the seekBar is slided
+                /*
+                keeping  mediaPlayer.stop(); in try catch will prevent the application from crashing when the seekbar is adjusted when the
+                alaram is not playing when the app is first booted
+                 */
+                try {
+                    mediaPlayer.stop(); //this will stop the music that is being played by the alarm when the seekBar is slided
+                }
+                catch(Exception e)
+                {
+                    Log.i("Error slider", "seekbar error");
+                }
             }
 
             @Override
